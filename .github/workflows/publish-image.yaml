@@ -12,4 +12,5 @@ jobs:
           docker build . -t mmjava/hello-docker-hub:latest
       - name: publish
         run: |
+          docker login -u mmjava -p ${{ secrets.DOCKER_HUB_TOKEN }}
           docker push mmjava/hello-docker-hub:latest
