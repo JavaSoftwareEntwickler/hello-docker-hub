@@ -9,7 +9,7 @@ jobs:
         uses: actions/checkout@v4
       - name: build
         run: |
-          docker build . -t mmjava/hello-docker-hub:latest
+          docker build . -t ${{secrets.DOCKER_USER_NAME}}/hello-docker-hub:latest
       - name: publish
         run: |
           docker login -u mmjava -p ${{ secrets.DOCKER_HUB_TOKEN }}
